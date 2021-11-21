@@ -20,7 +20,7 @@ app.get('/',(req,res)=>{
 
 app.post('/',(req,res)=>{
     const fistName=req.body.FirstName
-    const lastName=req.body.lastName
+    const lastName=req.body.LastName
     const email=req.body.Email
 
     const data={
@@ -45,7 +45,7 @@ app.post('/',(req,res)=>{
     }
 
     const request=https.request(url,option,(response)=>{
-        console.log(response.statusCode)
+        // console.log(response.statusCode)
         if(response.statusCode === 200){
             res.sendFile(__dirname+'/success.html')
         }else{
